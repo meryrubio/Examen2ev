@@ -25,9 +25,12 @@ public class Firework : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _rend = GetComponent<SpriteRenderer>();
 
+        //Color color = _rend.color;
+        //color randomColor = new Color(float alpha = Random.value)
+
         //Color randomColor = new Color(Random.value, Random.value, Random.value, 1f);
 
-       
+
         //_rend.color = randomColor;
 
         GameManager.instance.IncreaseScore(10);
