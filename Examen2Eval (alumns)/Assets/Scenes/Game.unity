@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 881307123}
   - component: {fileID: 881307122}
   - component: {fileID: 881307124}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1888,17 +1888,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56e47e1c8998bb469ee2426957bd74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightKey: 100
-  leftKey: 97
+  rightKey: 275
+  leftKey: 276
   jumpKey: 32
   speed: 1
   rayDistance: 0.15
-  jumpForce: 3
+  jumpForce: 5
   groundMask:
     serializedVersion: 2
     m_Bits: 8
   jumpClip: {fileID: 8300000, guid: bcdc1e25b02c41f44bd36032ca03b914, type: 3}
   fireworkPrefab: {fileID: 739398319963719684, guid: fb1f5164540ac0948b315c441e2fa7e9, type: 3}
+  maxJumps: 2
+  currentJumps: 0
 --- !u!70 &1940118826
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

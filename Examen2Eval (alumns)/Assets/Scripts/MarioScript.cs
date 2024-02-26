@@ -18,6 +18,10 @@ public class MarioScript : MonoBehaviour
     private Vector2 dir;
     private bool _intentionToJump;
 
+    //apartado2 -> doble salto, se puede modificar el maximo de saltos en el inspector
+    public int maxJumps = 2; // numero de saltos maximos que puede dar el jugador
+    public int currentJumps = 0; // indica el numero de saltoa Actuales que lleva el jugador en el momento
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,10 +83,12 @@ public class MarioScript : MonoBehaviour
         rb.velocity = nVel;
 
 
-        if (_intentionToJump && grnd)
+        if (_intentionToJump && (grnd || currentJumps < maxJumps)) //esta en el suelo o no ha llegado aun al numero maximo de saltos / lo mete en el fixe update por fisicas
         {
             _animator.Play("jumpAnimation");
             AddJumpForce();
+
+            currentJumps++; //le suma uno a la variable (currentJumps = currentJumps + 1)
         }
         _intentionToJump = false;
 
@@ -101,6 +107,7 @@ public class MarioScript : MonoBehaviour
         RaycastHit2D collision = Physics2D.Raycast(transform.position, Vector2.down, rayDistance, groundMask);
         if (collision)
         {
+            currentJumps = 0; //reinicia el currentJump
             return true;
         }
         return false;
