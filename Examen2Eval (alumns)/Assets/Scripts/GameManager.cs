@@ -59,6 +59,14 @@ public class GameManager : MonoBehaviour
     {
         points = value;
     }
+    public int GetFireworks()
+    {
+        return fireworks;
+    }
+    public void IncreaseScore(int amount) // este metodo sirve para que los fuegos puedan ir amuentando
+    {
+        fireworks += amount;
+    }
 
     // callback ---> funcion que se va a llamar en el onclick() de los botones
     public void LoadScene(string sceneName)
